@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: rgb(2, 2, 2);
+  color: aliceblue;
+}
+
+.text-gradient{
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
