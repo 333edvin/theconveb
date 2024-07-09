@@ -1,17 +1,49 @@
+'use client'
 import { AiFillInstagram } from "react-icons/ai";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 
+import React, { useState } from 'react';
+import { toast } from 'sonner';
 import logoname from '../../../public/images/logo.png';
 import Image from "next/image";
 
 function Footer() {
+  const [formData, setFormData] = useState({
+    email: '',
+  });
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value,
+  //   });
+  // };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+    // const response = await fetch('/api/contact', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(formData),
+    // });
+    if (formData) {
+      // router.push('/');
+      toast.success('Thanks for joining');
+      setFormData({  email: '' });
+    } else {
+      toast.error('Failed to send message. Please try again later.');
+    }
+  };
   return (
     <>
       <div className="bg-black grid grid-cols-1 md:grid-cols-3 mx-auto p-8 md:p-10 py-20 gap-10">
-        <div className="flex flex-col items-start space-y-4">
+        <form onSubmit={handleSubmit} className="flex flex-col items-start space-y-4">
           <h3 className="px-3 py-2 bg-cyan-900 text-cyan-200 rounded-full text-center">
             Join Our Newsletter
           </h3>
@@ -21,6 +53,9 @@ function Footer() {
               id="username"
               type="text"
               placeholder="example@gmail.com"
+              value={formData.name}
+              
+              required
             />
             <button
               type="submit"
@@ -29,7 +64,7 @@ function Footer() {
               Join
             </button>
           </div>
-        </div>
+        </form>
 
         <div className="flex flex-col space-y-4">
           <h3 className="px-3 py-2 bg-cyan-900 text-cyan-200 rounded-full text-center">
