@@ -14,7 +14,7 @@ function Action() {
           </Zoomout>
         </span>
       </h2>
-      <a href="/contact" className="inline-block px-6 py-3 md:px-8 md:py-4 bg-cyan-400 text-white rounded-full font-bold shadow-lg transition transform hover:bg-cyan-300 hover:shadow-2xl hover:scale-105">
+      <a href="/contact" className="inline-block px-6 py-3 md:px-8 md:py-4 bg-cyan-600 text-white rounded-full font-bold shadow-lg transition transform hover:bg-cyan-300 hover:shadow-2xl hover:scale-105">
         Let&apos;s Discuss
       </a>
     </div>
