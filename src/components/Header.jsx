@@ -1,9 +1,7 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '../../../public/images/conveb.png'
-import head from '../../../public/images/logo2.jpg'
-import logo3 from '../../../public/images/logo3.jpeg'
+import logo from '../../public/images/conveb.png'
 import React, { useState } from 'react'
 import { RiWhatsappFill } from "react-icons/ri";
 import { AiFillInstagram } from "react-icons/ai";
@@ -30,13 +28,13 @@ function Header() {
       </div>
 
       {/* CENTER: DESKTOP MENU (hidden on mobile) */}
-      <div className="hidden sm:flex flex-1 justify-center space-x-8  ">
+      <div className="hidden sm:flex  justify-center  ">
         <div className='flex gap-8 border border-slate-500 p-2 rounded-full bg-black/50 p-4 px-6 backdrop-blur-md'>
 
         <Link href="/" className="hover:text-cyan-300">Home</Link>
-        <Link href="/about" className="hover:text-cyan-300">About</Link>
+        <Link href="/about" className="hover:text-cyan-300">We are..</Link>
         <Link href="/services" className="hover:text-cyan-300">Services</Link>
-        <Link href="/contact" className="hover:text-cyan-300">Contact</Link>
+        <Link href="/contact" className="hover:text-cyan-300">Connect</Link>
         </div>
       </div>
 
@@ -76,13 +74,13 @@ function Header() {
               <Link href="/" className="text-white-700" onClick={closeDrawer}>Home</Link>
             </li>
             <li className="p-4 ">
-              <Link href="/about" className="text-white-700" onClick={closeDrawer}>About</Link>
+              <Link href="/about" className="text-white-700" onClick={closeDrawer}>We are..</Link>
             </li>
             <li className="p-4 ">
               <Link href="/services" className="text-white-700" onClick={closeDrawer}>Services</Link>
             </li>
             <li className="p-4">
-              <Link href="/contact" className="text-white-700" onClick={closeDrawer}>Contact</Link>
+              <Link href="/contact" className="text-white-700" onClick={closeDrawer}>Connect</Link>
             </li>
           </ul>
         </div>

@@ -1,11 +1,11 @@
 // app/layout.jsx
-import { Bruno_Ace } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "../components/Header";
 import { Toaster } from "sonner";
+import Footer2 from "../components/Footer2";
 
-const inter = Bruno_Ace({ subsets: ["latin"], weight: ["400"] });
+const inter = Poppins({ subsets: ["latin"], weight: ["400"] });
 
 const IS_MAINTENANCE =
   process.env.NEXT_PUBLIC_MAINTENANCE === "true";
@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header />
         {children}
-        <Footer />
+        <Footer2 />
         <Toaster />
       </body>
     </html>

@@ -1,9 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Gravitas+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: rgb(2, 2, 2);
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for a cleaner "app-like" look if desired */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #050505;
   color: aliceblue;
 }
 
@@ -12,52 +25,57 @@ body{
 .serv-container {
   position: relative;
 }
+
 /* styles/globals.css */
 
 
 
 .about {
   position: relative;
-  z-index: 1; /* This will be below the service section */
+  z-index: 1;
+  /* This will be below the service section */
 }
+
 
 .service {
   position: relative;
-  z-index: 2; /* This will overlap the about section */
+  z-index: 2;
+  /* This will overlap the about section */
 }
 
 .process,
 .action {
   position: relative;
-  z-index: 0; 
+  z-index: 0;
 }
 
-
+/* .process_number {
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+} */
 
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.1s ease-in-out ;
+  animation: fadeIn 0.1s ease-in-out;
 }
 
 
 .gradient-background {
-  background: linear-gradient(to right, #adadad, #010101)!important;
+  background: linear-gradient(to right, #adadad, #010101) !important;
 }
 
 
 
-.text-gradient{
+.text-gradient {
   -webkit-background-clip: text;
   background-clip: text;
 }
-
-
-
