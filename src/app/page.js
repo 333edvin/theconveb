@@ -1,9 +1,10 @@
-import Hero2 from "../containers/Hero2";
-import About2 from "../containers/About2";
-import Service2 from "../containers/Service2";
-import Works2 from "../containers/works2";
-import Process2 from "../containers/Process2";
-import Contact from "../containers/Contact";
+
+import About2 from "@/containers/About2";
+import Contact from "@/containers/Contact";
+import Hero2 from "@/containers/Hero2";
+import Process2 from "@/containers/Process2";
+import Service2 from "@/containers/Service2";
+import Works2 from "@/containers/Works2";
 
 
 export default function Home() {
