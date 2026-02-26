@@ -27,7 +27,7 @@ const Works2 = () => {
         <div className="max-w-xl md:ml-auto text-right">
           <h2 className="text-4xl md:text-6xl font-light mb-6">Selected Works.</h2>
           <p className="max-w-2xl  text-gray-400 text-sm md:text-xl leading-relaxed mb-8">
-            A curated look at the digital experiences we've crafted for <br className="hidden md:block" />
+            A curated look at the digital experiences we&apos;ve crafted for <br className="hidden md:block" />
             brands that demand a higher quality.
           </p>
           <button className="px-8 py-3 bg-white text-black font-semibold rounded-sm hover:bg-gray-200 transition-colors">

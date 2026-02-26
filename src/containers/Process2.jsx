@@ -37,51 +37,32 @@ const ProcessStep = ({ step, index, totalSteps, progress }) => {
   const isLastStep = index === totalSteps - 1;
   const isFirstStep = index === 0;
 
-  // For first step: visible from start (progress 0)
-  // For last step: stays visible at the end (progress 1)
-  // For middle steps: fade in and out
-
-  let opacity;
-  let y;
+  // Create input ranges based on step type
+  let opacityInput, opacityOutput, yInput, yOutput;
 
   if (isFirstStep) {
     // First step: visible from beginning, fades out at its end
-    opacity = useTransform(
-      progress,
-      [0, 0.05, end - 0.05, end],
-      [1, 1, 0, 0]
-    );
-    y = useTransform(
-      progress,
-      [0, 0.1, end - 0.1, end],
-      [0, 0, -20, -20]
-    );
+    opacityInput = [0, 0.05, end - 0.05, end];
+    opacityOutput = [1, 1, 0, 0];
+    yInput = [0, 0.1, end - 0.1, end];
+    yOutput = [0, 0, -20, -20];
   } else if (isLastStep) {
     // Last step: fades in normally but never fades out
-    opacity = useTransform(
-      progress,
-      [start, start + 0.05, 0.95, 1],
-      [0, 1, 1, 1]
-    );
-    y = useTransform(
-      progress,
-      [start, start + 0.1, 0.95, 1],
-      [20, 0, 0, 0]
-    );
+    opacityInput = [start, start + 0.05, 0.95, 1];
+    opacityOutput = [0, 1, 1, 1];
+    yInput = [start, start + 0.1, 0.95, 1];
+    yOutput = [20, 0, 0, 0];
   } else {
     // Middle steps: fade in and out normally
-    opacity = useTransform(
-      progress,
-      [start, start + 0.05, end - 0.05, end],
-      [0, 1, 1, 0]
-    );
-    y = useTransform(
-      progress,
-      [start, start + 0.1, end - 0.1, end],
-      [20, 0, 0, -20]
-    );
+    opacityInput = [start, start + 0.05, end - 0.05, end];
+    opacityOutput = [0, 1, 1, 0];
+    yInput = [start, start + 0.1, end - 0.1, end];
+    yOutput = [20, 0, 0, -20];
   }
 
+  // Call useTransform unconditionally with the pre-defined arrays
+  const opacity = useTransform(progress, opacityInput, opacityOutput);
+  const y = useTransform(progress, yInput, yOutput);
 
   return (
     <motion.div
@@ -124,6 +105,7 @@ const Process2 = () => {
     damping: 40,
     restDelta: 0.001
   });
+
 
   return (
     <div className=" min-h-screen">

@@ -35,7 +35,7 @@ const Service2 = () => {
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-10 md:mb-16 leading-tight  ">
-          The "<span className="font-bold">Growth Architecture</span>" <br />
+          The&quot;<span className="font-bold">Growth Architecture</span>&quot; <br />
           Services.
         </h2>
 

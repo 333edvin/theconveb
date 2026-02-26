@@ -26,12 +26,12 @@ export default function About2() {
                     <div className='flex flex-col justify-between h-full  px-7 py-16 md:px-16 lg:px-112'>
 
                         <h2 className="text-[32px] md:text-5xl lg:text-5xl mb-10 md:mb-20">
-                            We build for the scale you haven't reached yet.
+                            We build for the scale you haven&apos;t reached yet.
                         </h2>
 
                         <div className="space-y-10 text-gray-400 text-[13px] md:text-lg lg:text-lg ">
                             <p className='max-w-xl '>
-                                Most agencies build for today. We build for the " <span className="text-white font-black italic">what if.</span> "
+                                Most agencies build for today. We build for the &apos; <span className="text-white font-black italic">what if.</span> &apos;
                                 What if your traffic spikes by <span className="text-white font-black">1000%</span>?
                                 What if you need to pivot your entire business model overnight?
                             </p>
@@ -39,7 +39,7 @@ export default function About2() {
                             <div>
                                 <p className=" text-right ">
                                     At <span className="text-white font-bold uppercase tracking-widest">Conveb</span>,
-                                    we don't just skin websites; we architect digital engines. 
+                                    we don&apos;t just skin websites; we architect digital engines. 
                                     We handle the brutal technical complexities—the invisible stuff that
                                     keeps your CEO sleeping at night—so you can focus on the only
                                     thing that matters: <span className="text-white font-black italic">your next phase of growth.</span>

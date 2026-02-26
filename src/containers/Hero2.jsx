@@ -31,7 +31,7 @@ function Hero2() {
                     </p>
 
                     <button className="group relative px-10 py-4 bg-white text-black font-semibold rounded-sm transition-all hover:bg-opacity-90 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.5)] before:absolute before:inset-0 before:rounded-sm before:bg-white/20 before:blur-xl before:opacity-0 before:transition-opacity hover:before:opacity-100 before:-z-10">
-                        Let's Grow
+                        Let&apos;s Grow
                     </button>
                 </div>
             </main>

@@ -12,7 +12,7 @@ const Contact = () => {
 
       {/* Header */}
       <div className="text-center mb-16">
-        <h2 className="text-5xl md:text-7xl font-light tracking-tighter mb-6">Let's Build</h2>
+        <h2 className="text-5xl md:text-7xl font-light tracking-tighter mb-6">Let&apos;s Build</h2>
         <p className="text-gray-400 max-w-lg mx-auto text-sm md:text-base leading-relaxed px-8 md:px-0">
           Reach out to discuss your project or just to say hello. We usually respond within 24 hours.
         </p>
