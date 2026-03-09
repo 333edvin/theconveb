@@ -3,6 +3,7 @@ import svg1 from '../../public/svgs/svg1.svg';
 import RunningText from '@/components/RunningText';
 import Reveal from '@/app/Animations/Reveal';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function Hero2() {
 
@@ -10,7 +11,7 @@ function Hero2() {
         <div className="relative min-h-screen w-full text-white overflow-hidden">
             {/* Background Decorative Elements - UNTOUCHED */}
             <div className="absolute top-8 md:top-0 left-0 w-full h-full pointer-events-none">
-                <img src={logobg.src} alt="Hex Shape Background" className="w-[550px] h-auto object-cover" />
+                <Image width={550} height={375} src={logobg.src} alt="Hex Shape Background" className="w-[550px] h-auto object-cover" />
             </div>
 
             {/* Hero Content - PERFECTLY CENTERED */}
@@ -48,7 +49,7 @@ function Hero2() {
 
             {/* Decorative Bottom Shape (The white swirl) - UNTOUCHED */}
             <div className="absolute bottom-0 -right-20 md:right-0 pointer-events-none">
-                <img src={svg1.src} alt="Decorative SVG" className="w-[350px] md:w-full h-full object-contain" />
+                <Image width={350} height={375} src={svg1.src} alt="Decorative SVG" className="w-[350px] md:w-full h-full object-contain" />
             </div>
         </div>
     )

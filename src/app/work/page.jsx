@@ -15,6 +15,7 @@ import work3_2 from '../../../public/images/work3.2.jpg';
 import work4 from '../../../public/images/work4.jpg';
 import work4_1 from '../../../public/images/work4.1.jpg';
 import work4_2 from '../../../public/images/work4.2.jpg';
+import Image from "next/image";
 
 // ─── YOUR WORKS DATA ──────────────────────────────────────────────────────────
 // Replace images[] with your real screenshot URLs.
@@ -30,7 +31,7 @@ const WORKS = [
     description: "A full digital experience designed for CENO — from brand identity through to a performant, animated web presence.",
     link: "https://example.com",
     cover: work1.src,
-    images: [ work1_1.src , work1_2.src], // add more screenshots here
+    images: [work1_1.src, work1_2.src], // add more screenshots here
   },
   {
     slug: "holox",
@@ -79,7 +80,8 @@ function WorkCard({ work, onClick }) {
       style={{ aspectRatio: "4/3" }}
     >
       {/* image */}
-      <img
+      <Image
+        width={500} height={375}
         src={work.cover}
         alt={work.title}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

@@ -1,5 +1,6 @@
 import React from 'react';
 import svg7 from '../../../../public/svgs/svg7.svg';
+import Image from 'next/image';
 
 const MissionVision = () => {
   return (
@@ -57,7 +58,7 @@ const MissionVision = () => {
           </div>
         </div>
       </section>
-      <img src={svg7.src} alt='svg5' className='absolute bottom-[14rem] md:bottom-52 left-2 md:left-14 h-96 md:h-[600px] opacity-0 md:opacity-100  pointer-events-none' />
+      <Image src={svg7.src} alt='svg5' width={500} height={600} className='absolute bottom-[14rem] md:bottom-52 left-2 md:left-0 h-96 md:h-[600px] opacity-0 md:opacity-100  pointer-events-none' />
     </div>
   );
 };

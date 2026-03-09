@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import Image from "next/image";
 
 function useLockScroll(active) {
     useEffect(() => {
@@ -117,7 +118,7 @@ export default function WorkDrawer({ work, onClose }) {
                     <div
                         className="w-full rounded-xl sm:rounded-2xl overflow-hidden mb-5 bg-white/5 "
                     >
-                        <img
+                        <Image width={500} height={375}
                             src={work.cover}
                             alt={work.title}
                             className="w-full h-full object-cover"
@@ -136,7 +137,7 @@ export default function WorkDrawer({ work, onClose }) {
                                     className="flex-shrink-0 rounded-lg sm:rounded-xl overflow-hidden bg-white/5 max-w-96 h-52 md:h-96" onClick={() => setModal(src)}
 
                                 >
-                                    <img
+                                    <Image width={500} height={375}
                                         src={src}
                                         alt={`${work.title} ${i + 1}`}
                                         className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
@@ -150,7 +151,7 @@ export default function WorkDrawer({ work, onClose }) {
                             className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4"
                             onClick={() => setModal(false)}
                         >
-                            <img
+                            <Image width={500} height={375}
                                 src={modal}
                                 alt="Preview"
                                 className="max-w-full max-h-full object-contain rounded-xl"

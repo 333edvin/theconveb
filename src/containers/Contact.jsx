@@ -1,13 +1,14 @@
 import React from 'react';
 import svg4 from '../../public/svgs/svg4.svg';
 import Reveal from '@/app/Animations/Reveal';
+import Image from 'next/image';
 const Contact = () => {
   return (
     <section className=" text-white pt-8 md:pt-24  relative overflow-hidden">
       {/* Top Decorative Wave */}
       <div className="flex justify-center mb-14">
         <div className="w-full max-w-6xl ">
-          <img src={svg4.src} alt="Decorative Wave" className="w-full h-full object-contain" />
+          <Image width={500} height={375} src={svg4.src} alt="Decorative Wave" className="w-full h-full object-contain" />
         </div>
       </div>
 

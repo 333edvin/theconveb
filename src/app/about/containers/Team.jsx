@@ -2,6 +2,7 @@ import React from 'react';
 import Team1 from '../../../../public/pngs/team1.png';
 import Team2 from '../../../../public/pngs/team2.png';
 import Team3 from '../../../../public/pngs/team3.png';
+import Image from 'next/image';
 
 const TeamSection = () => {
   const team = [
@@ -31,11 +32,13 @@ const TeamSection = () => {
     {/* Use justify-items-center to ensure grid children stay in the middle */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center">
       {team.map((member, index) => (
-        <div key={index} className="flex flex-col items-center w-full max-w-[370px]">
+        <div key={index} className="flex flex-col items-center justify-center w-full max-w-[370px]">
           
           {/* Image Container */}
-          <div className="relative w-full aspect-[4/5] -mb-14 md:mb-8 overflow-hidden group">
-            <img
+          <div className="relative w-full aspect-[4/5] -mb-24 md:mb-8 overflow-hidden group">
+            <Image
+              width={300}
+              height={375}
               src={member.image.src}
               alt={member.name}
               className=" md:w-full md:h-full grayscale hover:grayscale-0 transition-all duration-500 ease-in-out object-cover"

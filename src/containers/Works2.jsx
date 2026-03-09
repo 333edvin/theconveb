@@ -5,6 +5,8 @@ import work1 from '../../public/images/work1.jpg';
 import work1_1 from '../../public/images/work1.1.jpg';
 import work1_2 from '../../public/images/work1.2.jpg';
 import work2 from '../../public/images/work2.jpg';
+import work2_1 from '../../public/images/work2.1.jpg';
+import work2_2 from '../../public/images/work2.2.jpg';
 import work3 from '../../public/images/work3.jpg';
 import work3_1 from '../../public/images/work3.1.jpg';
 import work3_2 from '../../public/images/work3.2.jpg';
@@ -16,6 +18,7 @@ import Reveal from '@/app/Animations/Reveal';
 import { useRouter, useSearchParams } from "next/navigation";
 import WorkDrawer from './Workdrawer';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // ─── Add your real data here ──────────────────────────────────────────────────
 // slug     → appears in URL: /?project=ceno
@@ -32,7 +35,7 @@ const WORKS = [
     description: "A full digital experience designed for CENO — from brand identity through to a performant, animated web presence.",
     link: "https://example.com",
     cover: work1.src,
-    images: [ work1_1.src , work1_2.src], // add more screenshots here
+    images: [work1_1.src, work1_2.src], // add more screenshots here
   },
   {
     slug: "holox",
@@ -44,7 +47,7 @@ const WORKS = [
     description: "HoloX needed a bold, futuristic interface. We designed and built a high-performance product site with immersive scroll animations.",
     link: "https://example.com",
     cover: work2.src,
-    images: [work2.src, work3.src],
+    images: [work2_1.src, work2_2.src],
   },
   {
     slug: "nuxion",
@@ -77,7 +80,7 @@ const Works2 = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [activeWork, setActiveWork] = useState(null);
- 
+
 
   // Restore drawer on page reload via ?project= URL param
   useEffect(() => {
@@ -102,7 +105,7 @@ const Works2 = () => {
       {/* Header Area */}
       <div className="relative flex flex-col md:flex-row md:items-end justify-between mb-16 gap-10 md:gap-0">
         <div>
-          <img src={svg3.src} alt="Decorative Wave" className='w-full' />
+          <Image width={500} height={375} src={svg3.src} alt="Decorative Wave" className='w-full' />
         </div>
 
         <div className="max-w-xl md:ml-auto text-right">
@@ -117,9 +120,9 @@ const Works2 = () => {
           </Reveal>
           <Reveal index={2}>
             <Link href='/work'>
-            <button className="px-8 py-3 bg-white text-black font-semibold rounded-sm hover:bg-gray-200 transition-colors">
-              View All
-            </button>
+              <button className="px-8 py-3 bg-white text-black font-semibold rounded-sm hover:bg-gray-200 transition-colors">
+                View All
+              </button>
             </Link>
           </Reveal>
         </div>
@@ -129,11 +132,13 @@ const Works2 = () => {
         {WORKS.map((work) => (
           <div
             key={work.slug}
-            onClick={() => openWork(work)}        
+            onClick={() => openWork(work)}
             className="group relative aspect-[4/3] overflow-hidden rounded-3xl bg-[#1a1a1a] cursor-pointer"
           >
             <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0">
-              <img
+              <Image
+                width={500}
+                height={375}
                 src={work.cover}
                 alt={work.title}
                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"

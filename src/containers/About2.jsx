@@ -1,6 +1,7 @@
 import Reveal from '@/app/Animations/Reveal';
 import About from '../../public/pngs/about.png';
 import svg2 from '../../public/svgs/svg2.svg';
+import Image from 'next/image';
 
 export default function About2() {
     return (
@@ -9,7 +10,8 @@ export default function About2() {
 
             {/* Left Side: Image Container */}
             <div className="col-span-1 md:col-span-5 lg:col-span-5 ">
-                <img
+                <Image
+                width={500} height={375}
                     src={About.src}
                     alt="Conveb Mobile Mockup"
                     // Added h-auto for better responsive scaling
@@ -60,7 +62,7 @@ export default function About2() {
                     <div className=" flex flex-row justify-end md:justify-between items-end  w-full pr-8 md:pr-16 ">
                         {/* Decorative SVG - Adjusted positioning */}
                         <div className=" pointer-events-none hidden md:block">
-                            <img src={svg2.src} alt="Decorative SVG" className="w-full h-full object-contain" />
+                            <Image width={500} height={375} src={svg2.src} alt="Decorative SVG" className="w-full h-full object-contain" />
                         </div>
                         <Reveal>
 
