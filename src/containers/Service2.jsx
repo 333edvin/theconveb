@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi'; 
 import { motion, AnimatePresence } from 'framer-motion';
+import Reveal from '@/app/Animations/Reveal';
 
 const Service2 = () => {
   // Track which service is open by index (null means all closed)
@@ -34,10 +35,13 @@ const Service2 = () => {
     <section className=" text-white pt-24 md:py-24 px-6 md:px-16 lg:px-24 ">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
+        <Reveal>
+
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-10 md:mb-16 leading-tight  ">
           The&quot;<span className="font-bold">Growth Architecture</span>&quot; <br />
           Services.
         </h2>
+        </Reveal>
 
         {/* Services List */}
         <div className="border-t border-white/20">
@@ -50,6 +54,7 @@ const Service2 = () => {
                 className="border-b border-white/20 overflow-hidden"
               >
                 {/* Main Row */}
+                <Reveal index={index}>
                 <div 
                   onClick={() => toggleService(index)}
                   className={`group flex items-center justify-between py-8 cursor-pointer transition-all duration-500 
@@ -66,6 +71,7 @@ const Service2 = () => {
                     <HiOutlineArrowNarrowRight className="text-xl md:text-2xl transform" />
                   </div>
                 </div>
+                      </Reveal>
 
                 {/* Animated Description Area */}
                 <AnimatePresence>
@@ -75,9 +81,9 @@ const Service2 = () => {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                    >
-                      <div className="py-10 pl-4 md:pl-8 pr-12">
-                        <p className="text-gray-400 text-lg md:text-xl max-w-3xl leading-relaxed font-light">
+                      >
+                      <div className="py-5 md:py-10 pl-4 md:pl-8 pr-12">
+                        <p className="text-gray-400 text-sm md:text-xl max-w-3xl leading-relaxed font-light">
                           {item.description}
                         </p>
                       </div>

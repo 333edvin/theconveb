@@ -4,7 +4,7 @@ const Footer2 = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-white pt-24 pb-12 px-8 md:px-16 lg:px-24 border-t border-white/5 ">
+    <footer className="bg-black text-white pt-24 pb-12 px-8 md:px-16 lg:px-24 border-t border-white/5 space-y-10">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 md:mb-20">
           
@@ -52,6 +52,7 @@ const Footer2 = () => {
           </div>
 
         </div>
+        <p className='text-center text-5xl md:text-[12rem] mt-5 md:mt-0'>the Conveb</p>
 
         {/* Copyright Bar */}
         <div className="pt-12 border-t border-white/5 flex flex-col items-center justify-center">

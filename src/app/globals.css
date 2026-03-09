@@ -7,9 +7,12 @@
 
 
 html {
+  background-color: #050505;
   scroll-behavior: smooth;
 }
-
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}
 /* Hide scrollbar for a cleaner "app-like" look if desired */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

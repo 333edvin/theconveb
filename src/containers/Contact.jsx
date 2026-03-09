@@ -1,5 +1,6 @@
 import React from 'react';
 import svg4 from '../../public/svgs/svg4.svg';
+import Reveal from '@/app/Animations/Reveal';
 const Contact = () => {
   return (
     <section className=" text-white pt-8 md:pt-24  relative overflow-hidden">
@@ -12,10 +13,15 @@ const Contact = () => {
 
       {/* Header */}
       <div className="text-center mb-16">
+        <Reveal>
         <h2 className="text-5xl md:text-7xl font-light tracking-tighter mb-6">Let&apos;s Build</h2>
+        </Reveal>
+        <Reveal>
+
         <p className="text-gray-400 max-w-lg mx-auto text-sm md:text-base leading-relaxed px-8 md:px-0">
           Reach out to discuss your project or just to say hello. We usually respond within 24 hours.
         </p>
+        </Reveal>
       </div>
 
       <div className=" mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

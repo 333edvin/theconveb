@@ -1,6 +1,8 @@
 import logobg from '../../public/svgs/svglogo.svg';
 import svg1 from '../../public/svgs/svg1.svg';
 import RunningText from '@/components/RunningText';
+import Reveal from '@/app/Animations/Reveal';
+import Link from 'next/link';
 
 function Hero2() {
 
@@ -15,24 +17,32 @@ function Hero2() {
             <main className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-6 max-w-5xl mx-auto">
                 {/* Centering wrapper - using flex/grid to ensure exact center */}
                 <div className="flex flex-col items-center justify-center w-full">
-                    <h1 className="text-5xl md:text-8xl font-light tracking-tight mb-8">
-                        Built for Your <br />
-                        <RunningText
-                            text="Next Phase"
-                            className="font-serif italic font-light text-gray-300"
-                            speed={80}
-                            scrambleCount={10}
-                        /> of Growth.
-                    </h1>
+                    <Reveal index={1}>
 
-                    <p className="text-gray-400 text-md md:text-xl max-w-2xl leading-relaxed mb-12">
-                        We handle the technical side so you can focus on running your business with a
-                        platform you can actually trust.
-                    </p>
+                        <h1 className="text-5xl md:text-8xl font-light tracking-tight mb-8">
+                            Built for Your <br />
+                            <RunningText
+                                text="Next Phase"
+                                className="font-serif italic font-light text-gray-300"
+                                speed={80}
+                                scrambleCount={10}
+                            /> of Growth.
+                        </h1>
+                    </Reveal>
+                    <Reveal index={2}>
 
-                    <button className="group relative px-10 py-4 bg-white text-black font-semibold rounded-sm transition-all hover:bg-opacity-90 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.5)] before:absolute before:inset-0 before:rounded-sm before:bg-white/20 before:blur-xl before:opacity-0 before:transition-opacity hover:before:opacity-100 before:-z-10">
-                        Let&apos;s Grow
-                    </button>
+                        <p className="text-gray-400 text-md md:text-xl max-w-2xl leading-relaxed mb-12">
+                            We handle the technical side so you can focus on running your business with a
+                            platform you can actually trust.
+                        </p>
+                    </Reveal>
+                    <Reveal index={3}>
+                        <Link href='/contact'>
+                        <button className="group relative px-10 py-4 bg-white text-black font-semibold rounded-sm transition-all hover:bg-opacity-90 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.5)] before:absolute before:inset-0 before:rounded-sm before:bg-white/20 before:blur-xl before:opacity-0 before:transition-opacity hover:before:opacity-100 before:-z-10">
+                            Let&apos;s Grow
+                        </button>
+                        </Link>
+                    </Reveal>
                 </div>
             </main>
 
