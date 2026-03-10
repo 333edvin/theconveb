@@ -28,8 +28,8 @@ const StoryTimeline = () => {
        
 
         <Image src={svg5.src} alt='svg5' width={500} height={600} className='absolute -top-20 md:top-0 -left-40 md:left-0 w-[500px] h-96  pointer-events-none ' />
-        <Image src={svg6.src} alt='svg6' width={500} height={600} className='absolute top-28 md:top-60 -right-64 md:right-0 w-[500px] h-96  pointer-events-none' />
-      <div className="max-w-4xl mx-auto relative z-10 mt-28 md:mt-48">
+        <Image src={svg6.src} alt='svg6' width={500} height={600} className='absolute top-24 md:top-60 -right-64 md:right-0 w-[500px] h-96  pointer-events-none' />
+      <div className="max-w-4xl mx-auto relative z-10 mt-16 md:mt-48">
         <h2 className="text-4xl md:text-7xl font-medium text-center mb-20 md:mb-32">
           The Story
         </h2>

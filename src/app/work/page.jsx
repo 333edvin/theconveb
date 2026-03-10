@@ -118,7 +118,7 @@ function WorkCard({ work, onClick }) {
 }
 
 // ─── page ─────────────────────────────────────────────────────────────────
-export default function page() {
+export default function Page() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [activeWork, setActiveWork] = useState(null);

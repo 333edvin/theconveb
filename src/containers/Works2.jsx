@@ -101,7 +101,7 @@ const Works2 = () => {
   }
 
   return (
-    <section className="text-white py-10 md:py-20 px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section className="text-white pt-10 md:py-20 px-6 md:px-16 lg:px-24 ">
       {/* Header Area */}
       <div className="relative flex flex-col md:flex-row md:items-end justify-between mb-16 gap-10 md:gap-0">
         <div>
@@ -133,15 +133,15 @@ const Works2 = () => {
           <div
             key={work.slug}
             onClick={() => openWork(work)}
-            className="group relative aspect-[4/3] overflow-hidden rounded-3xl bg-[#1a1a1a] cursor-pointer"
+            className="group relative overflow-hidden rounded-3xl bg-[#1a1a1a] cursor-pointer h-[250px] md:h-[400px] lg:h-[360px]"
           >
-            <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0">
+            <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
               <Image
-                width={500}
-                height={375}
+                fill
                 src={work.cover}
                 alt={work.title}
-                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover opacity-80 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
             </div>
@@ -153,7 +153,6 @@ const Works2 = () => {
               <h3 className="text-3xl font-bold tracking-tighter">{work.title}</h3>
             </div>
 
-            {/* Hover Arrow */}
             <div className="absolute top-2 right-2 md:top-8 md:right-8 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-black/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <HiOutlineArrowNarrowRight className="text-xl -rotate-45" />
             </div>

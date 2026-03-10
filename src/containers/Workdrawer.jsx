@@ -134,7 +134,7 @@ export default function WorkDrawer({ work, onClose }) {
                             {work.images.map((src, i) => (
                                 <div
                                     key={i}
-                                    className="flex-shrink-0 rounded-lg sm:rounded-xl overflow-hidden bg-white/5 max-w-96 h-52 md:h-96" onClick={() => setModal(src)}
+                                    className="flex-shrink-0 rounded-lg sm:rounded-xl overflow-hidden bg-white/5 max-w-96 w-32 md:w-72 h-52 md:h-96" onClick={() => setModal(src)}
 
                                 >
                                     <Image width={500} height={375}

@@ -35,7 +35,7 @@ function Header() {
 
           {/* RIGHT: HAMBURGER — only shows when drawer is closed */}
           <div className={`sm:hidden border border-slate-500 rounded-full bg-black/50 overflow-hidden transition-opacity duration-300 ${drawerOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
-            <button onClick={toggleDrawer} className="text-white focus:outline-none p-3 flex items-center justify-center">
+            <button onClick={toggleDrawer} className="bg-transparent appearance-none text-white focus:outline-none p-3 flex items-center justify-center">
               <RiMenu3Line className="w-6 h-6" />
             </button>
           </div>

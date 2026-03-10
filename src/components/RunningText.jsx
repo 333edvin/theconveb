@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 const RunningText = ({ 
   text, 
@@ -15,54 +15,49 @@ const RunningText = ({
   const [isAnimating, setIsAnimating] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const elementRef = useRef(null);
+  const isAnimatingRef = useRef(false);
+  const hasAnimatedRef = useRef(false);
   
-  // Get unique letters from "nextphase" - all lowercase
-  const getScrambleChars = () => {
-    const uniqueLetters = new Set();
-    // Add all letters from "nextphase" (lowercase only)
-    'nextphase'.split('').forEach(char => {
-      if (char !== ' ') {
-        uniqueLetters.add(char.toLowerCase());
-      }
-    });
-    return Array.from(uniqueLetters).join('');
-  };
+  const scrambleChars = 'nextphas';
   
-  const scrambleChars = getScrambleChars(); // Returns: "nextphas"
-  
-  const getRandomChar = () => {
+  const getRandomChar = useCallback(() => {
     return scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
-  };
+  }, []);
   
-  const startAnimation = () => {
-    if (isAnimating || hasAnimated) return;
+  const startAnimation = useCallback(() => {
+    if (isAnimatingRef.current || hasAnimatedRef.current) return;
     
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     let scrambleIteration = 0;
     
-    setTimeout(() => {
+    const run = () => {
       const interval = setInterval(() => {
         if (scrambleIteration < scrambleCount) {
-          // Scramble using only lowercase letters from "nextphase"
           const scrambled = text
             .split('')
-            .map(char => {
-              if (char === ' ') return ' ';
-              return getRandomChar(); // Always return lowercase
-            })
+            .map(char => char === ' ' ? ' ' : getRandomChar())
             .join('');
           
           setDisplayText(scrambled);
           scrambleIteration++;
         } else {
           setDisplayText(text);
+          isAnimatingRef.current = false;
+          hasAnimatedRef.current = true;
           setIsAnimating(false);
           setHasAnimated(true);
           clearInterval(interval);
         }
       }, speed);
-    }, delay);
-  };
+    };
+
+    if (delay > 0) {
+      setTimeout(run, delay);
+    } else {
+      run();
+    }
+  }, [text, speed, delay, scrambleCount, getRandomChar]);
   
   useEffect(() => {
     if (!triggerOnView) {
@@ -73,7 +68,7 @@ const RunningText = ({
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
+          if (entry.isIntersecting && !hasAnimatedRef.current) {
             startAnimation();
           }
         });
@@ -83,7 +78,7 @@ const RunningText = ({
     
     if (elementRef.current) observer.observe(elementRef.current);
     return () => observer.disconnect();
-  }, [triggerOnView]);
+  }, [triggerOnView, startAnimation]);
   
   return (
     <Component ref={elementRef} className={className}>
