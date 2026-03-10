@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const ContactCTA = () => {
@@ -25,18 +26,22 @@ const ContactCTA = () => {
           {/* Glowing Primary Button */}
           <div className="relative group w-full sm:w-auto">
             <div className="absolute -inset-1 bg-white opacity-20 blur-xl group-hover:opacity-40 transition duration-500"></div>
+            <Link href='/contact'>
             <button className="relative w-full sm:w-auto bg-white text-black px-8 md:px-10 py-3 md:py-4 text-sm md:text-lg font-medium hover:bg-gray-100 transition-colors duration-300">
               Start a Project
             </button>
+            </Link>
           </div>
 
           {/* Secondary Outline Button */}
+          <Link href='/works'>
           <button
             className="w-full sm:w-auto bg-transparent appearance-none border border-white/30 px-8 md:px-10 py-3 md:py-4 text-sm md:text-lg font-medium hover:bg-white/10 transition-all duration-300"
             style={{ WebkitAppearance: 'none' }}
-          >
+            >
             View Selected Works
           </button>
+            </Link>
 
         </div>
 
