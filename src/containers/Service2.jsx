@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import Reveal from '@/app/Animations/Reveal';
+import { LuArrowUpRight } from 'react-icons/lu';
 
 const Service2 = () => {
   // Track which service is open by index (null means all closed)
@@ -68,7 +69,7 @@ const Service2 = () => {
                   {/* Circular Arrow Button */}
                   <div className={`w-10 h-10 md:w-14 md:h-14 border rounded-full flex items-center justify-center transition-all duration-500 ease-in-out
                     ${isOpen ? 'bg-white text-black border-white rotate-90' : 'border-white/30 group-hover:bg-white group-hover:text-black group-hover:border-white'}`}>
-                    <HiOutlineArrowNarrowRight className="text-xl md:text-2xl transform" />
+                    <LuArrowUpRight className="text-xl md:text-2xl transform" />
                   </div>
                 </div>
                       </Reveal>

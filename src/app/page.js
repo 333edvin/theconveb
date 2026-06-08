@@ -1,5 +1,6 @@
 
 import About2 from "@/containers/About2";
+import BlogSection from "@/containers/Blog";
 import Contact from "@/containers/Contact";
 import Hero2 from "@/containers/Hero2";
 import Process2 from "@/containers/Process2";
@@ -18,6 +19,7 @@ export default function Home() {
       <Service2 />
       <Works2 />
       <Process2 />
+      {/* <BlogSection/> */}
       <Contact />
     </main>
   );

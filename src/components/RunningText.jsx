@@ -1,5 +1,6 @@
 'use client';
 
+import { useSplashDone } from '@/app/context/SplashContext';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 const RunningText = ({ 
@@ -17,6 +18,8 @@ const RunningText = ({
   const elementRef = useRef(null);
   const isAnimatingRef = useRef(false);
   const hasAnimatedRef = useRef(false);
+
+  const splashDone = useSplashDone();
   
   const scrambleChars = 'nextphas';
   
@@ -60,6 +63,7 @@ const RunningText = ({
   }, [text, speed, delay, scrambleCount, getRandomChar]);
   
   useEffect(() => {
+    if (!splashDone) return;
     if (!triggerOnView) {
       startAnimation();
       return;
@@ -78,7 +82,7 @@ const RunningText = ({
     
     if (elementRef.current) observer.observe(elementRef.current);
     return () => observer.disconnect();
-  }, [triggerOnView, startAnimation]);
+  }, [splashDone, triggerOnView, startAnimation]);
   
   return (
     <Component ref={elementRef} className={className}>

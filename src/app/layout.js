@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import { Toaster } from "sonner";
 import Footer2 from "../components/Footer2";
+import { SplashProvider } from "./context/SplashContext";
 
 const inter = Poppins({ subsets: ["latin"], weight: ["400"] });
 
@@ -28,6 +29,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
   if (IS_MAINTENANCE && MAINTENANCE_URL) {
     return (
       <html lang="en">
@@ -48,10 +50,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <SplashProvider>
         <Header />
         {children}
         <Footer2 />
         <Toaster />
+        </SplashProvider>
       </body>
     </html>
   );

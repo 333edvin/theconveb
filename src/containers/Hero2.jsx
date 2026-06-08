@@ -19,16 +19,16 @@ function Hero2() {
                 {/* Centering wrapper - using flex/grid to ensure exact center */}
                 <div className="flex flex-col items-center justify-center w-full">
                     <Reveal index={1}>
-
-                        <h1 className="text-5xl md:text-8xl font-light tracking-tight mb-8">
+                    
+                        <p className="text-5xl md:text-8xl font-light tracking-tight mb-8">
                             Built for Your <br />
                             <RunningText
                                 text="Next Phase"
-                                className="font-serif italic font-light text-gray-300"
+                                className="charm-font text-gray-300"
                                 speed={80}
                                 scrambleCount={10}
                             /> of Growth.
-                        </h1>
+                        </p>
                     </Reveal>
                     <Reveal index={2}>
 

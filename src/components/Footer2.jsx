@@ -4,7 +4,7 @@ const Footer2 = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-white pt-24 pb-12 px-8 md:px-16 lg:px-24 border-t border-white/5 space-y-10">
+    <footer className="bg-black text-white pt-24 pb-2 px-8 md:px-16 lg:px-24 border-t border-white/5 space-y-10">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 md:mb-20">
           
@@ -12,9 +12,8 @@ const Footer2 = () => {
           <div className="space-y-6">
             <h4 className="text-gray-500 text-sm font-medium tracking-widest uppercase">Our Address</h4>
             <address className="not-italic text-gray-300 space-y-2 leading-relaxed text-xs">
-              <p>123456 Toronto</p>
-              <p>Canada</p>
-              <p>Building 47 office 38</p>
+              <p>Thrissur, Kerala</p>
+              <p>India</p>
             </address>
           </div>
 
@@ -22,7 +21,7 @@ const Footer2 = () => {
           <div className="space-y-6">
             <h4 className="text-gray-500 text-sm font-medium tracking-widest uppercase">Contact</h4>
             <div className="text-gray-300 space-y-2 text-xs">
-              <p className="hover:text-white transition-colors cursor-pointer">example@conveb.com</p>
+              <p className="hover:text-white transition-colors cursor-pointer">theconveb@gmail.com</p>
               <p className="hover:text-white transition-colors cursor-pointer">+91 8129 7797 13</p>
             </div>
           </div>
@@ -56,8 +55,8 @@ const Footer2 = () => {
 
         {/* Copyright Bar */}
         <div className="pt-12 border-t border-white/5 flex flex-col items-center justify-center">
-          <p className="text-gray-600 text-[10px] md:text-xs  uppercase">
-            {currentYear} @ All rights reserved
+          <p className="text-gray-600 text-[10px] md:text-[8px]  uppercase">
+            {currentYear} conveb @ All rights reserved
           </p>
         </div>
       </div>
